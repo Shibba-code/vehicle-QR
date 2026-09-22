@@ -25,11 +25,11 @@
 
         .logo {
             display: block;
-            max-width: 180px;
-            max-height: 100px;
+            max-width: 260px;
+            max-height: 120px;
             width: auto;
             height: auto;
-            margin: 0 auto 20px;
+            margin: 0 auto 25px;
             object-fit: contain;
         }
 
@@ -94,6 +94,14 @@
             color: #555;
         }
 
+        .not-found {
+            text-align: center;
+            color: #c00;
+            font-size: 28px;
+            font-weight: bold;
+            padding: 30px 0 10px;
+        }
+
         @media (max-width: 500px) {
 
             body {
@@ -106,8 +114,8 @@
             }
 
             .logo {
-                max-width: 150px;
-                max-height: 80px;
+                max-width: 220px;
+                max-height: 100px;
             }
 
             h2 {
@@ -133,9 +141,9 @@
 
 <script>
 
-    // ==========================================
-    // 20 VEHICLES DATA
-    // ==========================================
+    // ==================================================
+    // 20 VEHICLES
+    // ==================================================
 
     const vehicles = {
 
@@ -362,9 +370,9 @@
     };
 
 
-    // ==========================================
-    // GET VEHICLE ID FROM QR URL
-    // ==========================================
+    // ==================================================
+    // GET ID FROM QR LINK
+    // ==================================================
 
     const urlParams = new URLSearchParams(window.location.search);
 
@@ -372,22 +380,24 @@
 
     const vehicle = vehicles[vehicleID];
 
+    const content = document.getElementById("content");
 
-    // ==========================================
-    // VEHICLE NOT FOUND
-    // ==========================================
+
+    // ==================================================
+    // NO ID / INVALID ID
+    // ==================================================
 
     if (!vehicle) {
 
-        document.getElementById("content").innerHTML = `
+        content.innerHTML = `
 
             <img
-                src="esspl%20logo.png"
-                alt="Company Logo"
+                src="ESS%20Track%20Logo.png"
+                alt="ESS Track"
                 class="logo"
             >
 
-            <div class="expired">
+            <div class="not-found">
                 VEHICLE NOT FOUND
             </div>
 
@@ -400,9 +410,9 @@
     }
 
 
-    // ==========================================
+    // ==================================================
     // VEHICLE FOUND
-    // ==========================================
+    // ==================================================
 
     else {
 
@@ -413,17 +423,17 @@
         const now = new Date();
 
 
-        // ==========================================
-        // VEHICLE IS VALID
-        // ==========================================
+        // ==================================================
+        // VALID VEHICLE
+        // ==================================================
 
         if (now <= expiryDate) {
 
-            document.getElementById("content").innerHTML = `
+            content.innerHTML = `
 
                 <img
-                    src="esspl%20logo.png"
-                    alt="Company Logo"
+                    src="ESS%20Track%20Logo.png"
+                    alt="ESS Track"
                     class="logo"
                 >
 
@@ -433,12 +443,16 @@
 
                     <div class="row">
                         <div class="label">User Name</div>
-                        <div class="value">${vehicle.user}</div>
+                        <div class="value">
+                            ${vehicle.user}
+                        </div>
                     </div>
 
                     <div class="row">
                         <div class="label">Vehicle Reg. No.</div>
-                        <div class="value">${vehicle.reg}</div>
+                        <div class="value">
+                            ${vehicle.reg}
+                        </div>
                     </div>
 
                     <div class="row">
@@ -450,22 +464,30 @@
 
                     <div class="row">
                         <div class="label">Engine No.</div>
-                        <div class="value">${vehicle.engine}</div>
+                        <div class="value">
+                            ${vehicle.engine}
+                        </div>
                     </div>
 
                     <div class="row">
                         <div class="label">Vehicle Type</div>
-                        <div class="value">${vehicle.type}</div>
+                        <div class="value">
+                            ${vehicle.type}
+                        </div>
                     </div>
 
                     <div class="row">
                         <div class="label">Date of Issue</div>
-                        <div class="value">${vehicle.issue}</div>
+                        <div class="value">
+                            ${vehicle.issue}
+                        </div>
                     </div>
 
                     <div class="row">
                         <div class="label">Expiry Date</div>
-                        <div class="value">${vehicle.expiry}</div>
+                        <div class="value">
+                            ${vehicle.expiry}
+                        </div>
                     </div>
 
                 </div>
@@ -487,17 +509,17 @@
         }
 
 
-        // ==========================================
-        // VEHICLE IS EXPIRED
-        // ==========================================
+        // ==================================================
+        // EXPIRED VEHICLE
+        // ==================================================
 
         else {
 
-            document.getElementById("content").innerHTML = `
+            content.innerHTML = `
 
                 <img
-                    src="esspl%20logo.png"
-                    alt="Company Logo"
+                    src="ESS%20Track%20Logo.png"
+                    alt="ESS Track"
                     class="logo"
                 >
 
