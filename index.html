@@ -11,12 +11,12 @@
             font-family: Arial, sans-serif;
             background: #f4f6f8;
             margin: 0;
-            padding: 30px 15px;
+            padding: 20px 15px;
         }
 
         .card {
             max-width: 600px;
-            margin: 30px auto;
+            margin: 15px auto;
             background: #ffffff;
             padding: 30px;
             border-radius: 14px;
@@ -25,17 +25,17 @@
 
         .logo {
             display: block;
-            max-width: 260px;
-            max-height: 120px;
+            max-width: 330px;
+            max-height: 150px;
             width: auto;
             height: auto;
-            margin: 0 auto 25px;
+            margin: 0 auto 5px;
             object-fit: contain;
         }
 
         h2 {
             text-align: center;
-            margin: 0 0 30px;
+            margin: 0 0 25px;
             font-size: 28px;
             color: #222;
         }
@@ -110,16 +110,18 @@
 
             .card {
                 padding: 20px 15px;
-                margin: 15px auto;
+                margin: 10px auto;
             }
 
             .logo {
-                max-width: 220px;
-                max-height: 100px;
+                max-width: 260px;
+                max-height: 120px;
+                margin-bottom: 5px;
             }
 
             h2 {
                 font-size: 23px;
+                margin-bottom: 20px;
             }
 
             .row {
@@ -142,13 +144,14 @@
 <script>
 
     // ==================================================
-    // 20 VEHICLES
+    // 20 VEHICLES DATA
     // ==================================================
 
     const vehicles = {
 
         "01": {
             user: "KHAN COACH",
+            customer: "IZZAT KHAN",
             reg: "PE-6232",
             chassis: "306781",
             engine: "14081",
@@ -160,6 +163,7 @@
 
         "02": {
             user: "KHAN COACH",
+            customer: "IZZAT KHAN",
             reg: "PE-6455",
             chassis: "307038",
             engine: "14658",
@@ -171,6 +175,7 @@
 
         "03": {
             user: "KHAN COACH",
+            customer: "IZZAT KHAN",
             reg: "PE-6312",
             chassis: "307042",
             engine: "14662",
@@ -182,6 +187,7 @@
 
         "04": {
             user: "KHAN COACH",
+            customer: "IZZAT KHAN",
             reg: "PE-6541",
             chassis: "307044",
             engine: "14663",
@@ -193,6 +199,7 @@
 
         "05": {
             user: "KHAN COACH",
+            customer: "IZZAT KHAN",
             reg: "PE-6197",
             chassis: "306833",
             engine: "14179",
@@ -204,6 +211,7 @@
 
         "06": {
             user: "KHAN COACH",
+            customer: "IZZAT KHAN",
             reg: "PE-6156",
             chassis: "306940",
             engine: "14360",
@@ -215,6 +223,7 @@
 
         "07": {
             user: "KHAN COACH",
+            customer: "IZZAT KHAN",
             reg: "PE-6165",
             chassis: "306866",
             engine: "14229",
@@ -226,6 +235,7 @@
 
         "08": {
             user: "KHAN COACH",
+            customer: "IZZAT KHAN",
             reg: "PE-6147",
             chassis: "306328",
             engine: "13203",
@@ -237,6 +247,7 @@
 
         "09": {
             user: "KHAN COACH",
+            customer: "IZZAT KHAN",
             reg: "PE-6319",
             chassis: "307041",
             engine: "14655",
@@ -248,6 +259,7 @@
 
         "10": {
             user: "KHAN COACH",
+            customer: "IZZAT KHAN",
             reg: "PE-6121",
             chassis: "306821",
             engine: "14161",
@@ -259,6 +271,7 @@
 
         "11": {
             user: "KHAN COACH",
+            customer: "IZZAT KHAN",
             reg: "PE-6242",
             chassis: "306979",
             engine: "14498",
@@ -270,6 +283,7 @@
 
         "12": {
             user: "KHAN COACH",
+            customer: "IZZAT KHAN",
             reg: "PE-6119",
             chassis: "306806",
             engine: "14126",
@@ -281,6 +295,7 @@
 
         "13": {
             user: "KHAN COACH",
+            customer: "IZZAT KHAN",
             reg: "PE-6234",
             chassis: "306784",
             engine: "14084",
@@ -292,6 +307,7 @@
 
         "14": {
             user: "KHAN COACH",
+            customer: "IZZAT KHAN",
             reg: "PE-6118",
             chassis: "306818",
             engine: "14138",
@@ -303,6 +319,7 @@
 
         "15": {
             user: "KHAN COACH",
+            customer: "IZZAT KHAN",
             reg: "PE-6385",
             chassis: "307048",
             engine: "14676",
@@ -314,6 +331,7 @@
 
         "16": {
             user: "KHAN COACH",
+            customer: "IZZAT KHAN",
             reg: "PE-6556",
             chassis: "306355",
             engine: "13326",
@@ -325,6 +343,7 @@
 
         "17": {
             user: "KHAN COACH",
+            customer: "IZZAT KHAN",
             reg: "PE-4916",
             chassis: "304748",
             engine: "10984",
@@ -336,6 +355,7 @@
 
         "18": {
             user: "KHAN COACH",
+            customer: "IZZAT KHAN",
             reg: "JE-8737",
             chassis: "304854",
             engine: "11130",
@@ -347,6 +367,7 @@
 
         "19": {
             user: "KHAN COACH",
+            customer: "IZZAT KHAN",
             reg: "PE-4798",
             chassis: "",
             engine: "10506",
@@ -358,6 +379,7 @@
 
         "20": {
             user: "KHAN COACH",
+            customer: "IZZAT KHAN",
             reg: "PE-5856",
             chassis: "306411",
             engine: "13438",
@@ -371,7 +393,7 @@
 
 
     // ==================================================
-    // GET ID FROM QR LINK
+    // GET VEHICLE ID FROM QR LINK
     // ==================================================
 
     const urlParams = new URLSearchParams(window.location.search);
@@ -384,7 +406,7 @@
 
 
     // ==================================================
-    // NO ID / INVALID ID
+    // VEHICLE NOT FOUND
     // ==================================================
 
     if (!vehicle) {
@@ -445,6 +467,13 @@
                         <div class="label">User Name</div>
                         <div class="value">
                             ${vehicle.user}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="label">Customer Name</div>
+                        <div class="value">
+                            ${vehicle.customer}
                         </div>
                     </div>
 
