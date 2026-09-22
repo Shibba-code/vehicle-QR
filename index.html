@@ -9,41 +9,120 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: #f5f5f5;
-            padding: 30px 15px;
+            background: #f4f6f8;
             margin: 0;
+            padding: 30px 15px;
         }
 
         .card {
-            max-width: 500px;
+            max-width: 600px;
             margin: 30px auto;
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px #ccc;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+        }
+
+        .logo {
+            display: block;
+            max-width: 180px;
+            max-height: 100px;
+            width: auto;
+            height: auto;
+            margin: 0 auto 20px;
+            object-fit: contain;
         }
 
         h2 {
             text-align: center;
-            margin-bottom: 25px;
+            margin: 0 0 30px;
+            font-size: 28px;
+            color: #222;
+        }
+
+        .details {
+            width: 100%;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            overflow: hidden;
         }
 
         .row {
-            padding: 12px 0;
-            border-bottom: 1px solid #eee;
+            display: grid;
+            grid-template-columns: 45% 55%;
+            min-height: 48px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .row:last-child {
+            border-bottom: none;
+        }
+
+        .label {
+            font-weight: bold;
+            color: #333;
+            background: #f7f8f9;
+            padding: 14px;
+        }
+
+        .value {
+            color: #111;
+            padding: 14px;
+        }
+
+        .valid {
+            margin-top: 20px;
+            padding: 15px;
+            text-align: center;
+            background: #eef9f1;
+            border: 1px solid #b9e2c3;
+            border-radius: 8px;
+            color: #176b2c;
+            font-weight: bold;
         }
 
         .expired {
             text-align: center;
             color: #c00;
-            font-size: 28px;
+            font-size: 30px;
             font-weight: bold;
-            padding: 30px 0;
+            padding: 30px 0 10px;
         }
 
         .expired-text {
             text-align: center;
             color: #555;
+        }
+
+        @media (max-width: 500px) {
+
+            body {
+                padding: 15px 10px;
+            }
+
+            .card {
+                padding: 20px 15px;
+                margin: 15px auto;
+            }
+
+            .logo {
+                max-width: 150px;
+                max-height: 80px;
+            }
+
+            h2 {
+                font-size: 23px;
+            }
+
+            .row {
+                grid-template-columns: 42% 58%;
+                font-size: 14px;
+            }
+
+            .label,
+            .value {
+                padding: 11px 8px;
+            }
         }
     </style>
 </head>
@@ -54,61 +133,93 @@
 
 <script>
 
-    // =========================
+    // ==========================================
     // VEHICLE EXPIRY DATE
-    // =========================
+    // ==========================================
 
     const expiryDate = new Date("2026-10-31T23:59:59");
-
-    // Current date and time
     const now = new Date();
 
 
-    // =========================
-    // CHECK EXPIRY
-    // =========================
+    // ==========================================
+    // VEHICLE IS VALID
+    // ==========================================
 
     if (now <= expiryDate) {
 
-        // Vehicle is still valid
         document.getElementById("content").innerHTML = `
+
+            <img
+                src="esspl%20logo.png"
+                alt="Company Logo"
+                class="logo"
+            >
 
             <h2>Vehicle Verification</h2>
 
-            <div class="row">
-                <b>User Name:</b> KHAN COACH
+            <div class="details">
+
+                <div class="row">
+                    <div class="label">User Name</div>
+                    <div class="value">KHAN COACH</div>
+                </div>
+
+                <div class="row">
+                    <div class="label">Vehicle Reg. No.</div>
+                    <div class="value">AADP-949</div>
+                </div>
+
+                <div class="row">
+                    <div class="label">Chassis No.</div>
+                    <div class="value">305942</div>
+                </div>
+
+                <div class="row">
+                    <div class="label">Engine No.</div>
+                    <div class="value">12631</div>
+                </div>
+
+                <div class="row">
+                    <div class="label">Vehicle Type</div>
+                    <div class="value">BUS</div>
+                </div>
+
+                <div class="row">
+                    <div class="label">Date of Issue</div>
+                    <div class="value">04 June 2026</div>
+                </div>
+
+                <div class="row">
+                    <div class="label">Expiry Date</div>
+                    <div class="value">31 October 2026</div>
+                </div>
+
             </div>
 
-            <div class="row">
-                <b>Vehicle Reg #:</b> AADP-949
-            </div>
-
-            <div class="row">
-                <b>Chassis #:</b> 305942
-            </div>
-
-            <div class="row">
-                <b>Engine #:</b> 12631
-            </div>
-
-            <div class="row">
-                <b>Type:</b> BUS
-            </div>
-
-            <div class="row">
-                <b>Date of Issue:</b> 04 June 2026
-            </div>
-
-            <div class="row">
-                <b>Expiry Date:</b> 31 Oct 2026
+            <div class="valid">
+                ✓ VALID VEHICLE
+                <br>
+                <small>Valid until 31 October 2026</small>
             </div>
 
         `;
 
-    } else {
+    }
 
-        // Vehicle has expired
+
+    // ==========================================
+    // VEHICLE IS EXPIRED
+    // ==========================================
+
+    else {
+
         document.getElementById("content").innerHTML = `
+
+            <img
+                src="esspl%20logo.png"
+                alt="Company Logo"
+                class="logo"
+            >
 
             <div class="expired">
                 EXPIRED
@@ -119,6 +230,7 @@
             </p>
 
         `;
+
     }
 
 </script>
