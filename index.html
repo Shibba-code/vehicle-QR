@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Vehicle Verification</title>
 
     <style>
@@ -10,11 +11,12 @@
             font-family: Arial, sans-serif;
             background: #f5f5f5;
             padding: 30px 15px;
+            margin: 0;
         }
 
         .card {
             max-width: 500px;
-            margin: auto;
+            margin: 30px auto;
             background: white;
             padding: 25px;
             border-radius: 12px;
@@ -23,18 +25,25 @@
 
         h2 {
             text-align: center;
+            margin-bottom: 25px;
         }
 
         .row {
-            padding: 10px 0;
+            padding: 12px 0;
             border-bottom: 1px solid #eee;
         }
 
         .expired {
             text-align: center;
             color: #c00;
-            font-size: 25px;
+            font-size: 28px;
             font-weight: bold;
+            padding: 30px 0;
+        }
+
+        .expired-text {
+            text-align: center;
+            color: #555;
         }
     </style>
 </head>
@@ -45,36 +54,70 @@
 
 <script>
 
-    // Vehicle expiry date
+    // =========================
+    // VEHICLE EXPIRY DATE
+    // =========================
+
     const expiryDate = new Date("2026-10-31T23:59:59");
 
-    // Current date/time
+    // Current date and time
     const now = new Date();
+
+
+    // =========================
+    // CHECK EXPIRY
+    // =========================
 
     if (now <= expiryDate) {
 
+        // Vehicle is still valid
         document.getElementById("content").innerHTML = `
+
             <h2>Vehicle Verification</h2>
 
-            <div class="row"><b>User Name:</b> KHAN COACH</div>
-            <div class="row"><b>Vehicle Reg #:</b> AADP-949</div>
-            <div class="row"><b>Chassis #:</b> 305942</div>
-            <div class="row"><b>Engine #:</b> 12631</div>
-            <div class="row"><b>Type:</b> BUS</div>
-            <div class="row"><b>Date of Issue:</b> 04 June 2026</div>
-            <div class="row"><b>Expiry Date:</b> 31 Oct 2026</div>
+            <div class="row">
+                <b>User Name:</b> KHAN COACH
+            </div>
+
+            <div class="row">
+                <b>Vehicle Reg #:</b> AADP-949
+            </div>
+
+            <div class="row">
+                <b>Chassis #:</b> 305942
+            </div>
+
+            <div class="row">
+                <b>Engine #:</b> 12631
+            </div>
+
+            <div class="row">
+                <b>Type:</b> BUS
+            </div>
+
+            <div class="row">
+                <b>Date of Issue:</b> 04 June 2026
+            </div>
+
+            <div class="row">
+                <b>Expiry Date:</b> 31 Oct 2026
+            </div>
+
         `;
 
     } else {
 
+        // Vehicle has expired
         document.getElementById("content").innerHTML = `
+
             <div class="expired">
                 EXPIRED
             </div>
 
-            <p style="text-align:center;">
+            <p class="expired-text">
                 This vehicle verification has expired.
             </p>
+
         `;
     }
 
