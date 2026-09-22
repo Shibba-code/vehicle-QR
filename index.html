@@ -134,84 +134,250 @@
 <script>
 
     // ==========================================
-    // VEHICLE EXPIRY DATE
+    // 20 VEHICLES DATA
     // ==========================================
 
-    const expiryDate = new Date("2026-10-31T23:59:59");
-    const now = new Date();
+    const vehicles = {
+
+        "01": {
+            user: "KHAN COACH",
+            reg: "PE-6232",
+            chassis: "306781",
+            engine: "14081",
+            type: "BUS",
+            issue: "31 August 2026",
+            expiry: "31 August 2027",
+            expiryDate: "2027-08-31"
+        },
+
+        "02": {
+            user: "KHAN COACH",
+            reg: "PE-6455",
+            chassis: "307038",
+            engine: "14658",
+            type: "BUS",
+            issue: "31 August 2026",
+            expiry: "31 August 2027",
+            expiryDate: "2027-08-31"
+        },
+
+        "03": {
+            user: "KHAN COACH",
+            reg: "PE-6312",
+            chassis: "307042",
+            engine: "14662",
+            type: "BUS",
+            issue: "31 August 2026",
+            expiry: "31 August 2027",
+            expiryDate: "2027-08-31"
+        },
+
+        "04": {
+            user: "KHAN COACH",
+            reg: "PE-6541",
+            chassis: "307044",
+            engine: "14663",
+            type: "BUS",
+            issue: "31 August 2026",
+            expiry: "31 August 2027",
+            expiryDate: "2027-08-31"
+        },
+
+        "05": {
+            user: "KHAN COACH",
+            reg: "PE-6197",
+            chassis: "306833",
+            engine: "14179",
+            type: "BUS",
+            issue: "31 August 2026",
+            expiry: "31 August 2027",
+            expiryDate: "2027-08-31"
+        },
+
+        "06": {
+            user: "KHAN COACH",
+            reg: "PE-6156",
+            chassis: "306940",
+            engine: "14360",
+            type: "BUS",
+            issue: "31 August 2026",
+            expiry: "31 August 2027",
+            expiryDate: "2027-08-31"
+        },
+
+        "07": {
+            user: "KHAN COACH",
+            reg: "PE-6165",
+            chassis: "306866",
+            engine: "14229",
+            type: "BUS",
+            issue: "31 August 2026",
+            expiry: "31 August 2027",
+            expiryDate: "2027-08-31"
+        },
+
+        "08": {
+            user: "KHAN COACH",
+            reg: "PE-6147",
+            chassis: "306328",
+            engine: "13203",
+            type: "BUS",
+            issue: "31 August 2026",
+            expiry: "31 August 2027",
+            expiryDate: "2027-08-31"
+        },
+
+        "09": {
+            user: "KHAN COACH",
+            reg: "PE-6319",
+            chassis: "307041",
+            engine: "14655",
+            type: "BUS",
+            issue: "31 August 2026",
+            expiry: "31 August 2027",
+            expiryDate: "2027-08-31"
+        },
+
+        "10": {
+            user: "KHAN COACH",
+            reg: "PE-6121",
+            chassis: "306821",
+            engine: "14161",
+            type: "BUS",
+            issue: "31 August 2026",
+            expiry: "31 August 2027",
+            expiryDate: "2027-08-31"
+        },
+
+        "11": {
+            user: "KHAN COACH",
+            reg: "PE-6242",
+            chassis: "306979",
+            engine: "14498",
+            type: "BUS",
+            issue: "31 August 2026",
+            expiry: "31 August 2027",
+            expiryDate: "2027-08-31"
+        },
+
+        "12": {
+            user: "KHAN COACH",
+            reg: "PE-6119",
+            chassis: "306806",
+            engine: "14126",
+            type: "BUS",
+            issue: "31 August 2026",
+            expiry: "31 August 2027",
+            expiryDate: "2027-08-31"
+        },
+
+        "13": {
+            user: "KHAN COACH",
+            reg: "PE-6234",
+            chassis: "306784",
+            engine: "14084",
+            type: "BUS",
+            issue: "31 August 2026",
+            expiry: "31 August 2027",
+            expiryDate: "2027-08-31"
+        },
+
+        "14": {
+            user: "KHAN COACH",
+            reg: "PE-6118",
+            chassis: "306818",
+            engine: "14138",
+            type: "BUS",
+            issue: "31 August 2026",
+            expiry: "31 August 2027",
+            expiryDate: "2027-08-31"
+        },
+
+        "15": {
+            user: "KHAN COACH",
+            reg: "PE-6385",
+            chassis: "307048",
+            engine: "14676",
+            type: "BUS",
+            issue: "31 August 2026",
+            expiry: "31 August 2027",
+            expiryDate: "2027-08-31"
+        },
+
+        "16": {
+            user: "KHAN COACH",
+            reg: "PE-6556",
+            chassis: "306355",
+            engine: "13326",
+            type: "BUS",
+            issue: "31 August 2026",
+            expiry: "31 August 2027",
+            expiryDate: "2027-08-31"
+        },
+
+        "17": {
+            user: "KHAN COACH",
+            reg: "PE-4916",
+            chassis: "304748",
+            engine: "10984",
+            type: "BUS",
+            issue: "31 August 2026",
+            expiry: "31 August 2027",
+            expiryDate: "2027-08-31"
+        },
+
+        "18": {
+            user: "KHAN COACH",
+            reg: "JE-8737",
+            chassis: "304854",
+            engine: "11130",
+            type: "BUS",
+            issue: "31 August 2026",
+            expiry: "31 August 2027",
+            expiryDate: "2027-08-31"
+        },
+
+        "19": {
+            user: "KHAN COACH",
+            reg: "PE-4798",
+            chassis: "",
+            engine: "10506",
+            type: "BUS",
+            issue: "31 August 2026",
+            expiry: "31 August 2027",
+            expiryDate: "2027-08-31"
+        },
+
+        "20": {
+            user: "KHAN COACH",
+            reg: "PE-5856",
+            chassis: "306411",
+            engine: "13438",
+            type: "BUS",
+            issue: "31 August 2026",
+            expiry: "31 August 2027",
+            expiryDate: "2027-08-31"
+        }
+
+    };
 
 
     // ==========================================
-    // VEHICLE IS VALID
+    // GET VEHICLE ID FROM QR URL
     // ==========================================
 
-    if (now <= expiryDate) {
+    const urlParams = new URLSearchParams(window.location.search);
 
-        document.getElementById("content").innerHTML = `
+    const vehicleID = urlParams.get("id");
 
-            <img
-                src="esspl%20logo.png"
-                alt="Company Logo"
-                class="logo"
-            >
-
-            <h2>Vehicle Verification</h2>
-
-            <div class="details">
-
-                <div class="row">
-                    <div class="label">User Name</div>
-                    <div class="value">KHAN COACH</div>
-                </div>
-
-                <div class="row">
-                    <div class="label">Vehicle Reg. No.</div>
-                    <div class="value">AADP-949</div>
-                </div>
-
-                <div class="row">
-                    <div class="label">Chassis No.</div>
-                    <div class="value">305942</div>
-                </div>
-
-                <div class="row">
-                    <div class="label">Engine No.</div>
-                    <div class="value">12631</div>
-                </div>
-
-                <div class="row">
-                    <div class="label">Vehicle Type</div>
-                    <div class="value">BUS</div>
-                </div>
-
-                <div class="row">
-                    <div class="label">Date of Issue</div>
-                    <div class="value">04 June 2026</div>
-                </div>
-
-                <div class="row">
-                    <div class="label">Expiry Date</div>
-                    <div class="value">31 October 2026</div>
-                </div>
-
-            </div>
-
-            <div class="valid">
-                ✓ VALID VEHICLE
-                <br>
-                <small>Valid until 31 October 2026</small>
-            </div>
-
-        `;
-
-    }
+    const vehicle = vehicles[vehicleID];
 
 
     // ==========================================
-    // VEHICLE IS EXPIRED
+    // VEHICLE NOT FOUND
     // ==========================================
 
-    else {
+    if (!vehicle) {
 
         document.getElementById("content").innerHTML = `
 
@@ -222,14 +388,130 @@
             >
 
             <div class="expired">
-                EXPIRED
+                VEHICLE NOT FOUND
             </div>
 
             <p class="expired-text">
-                This vehicle verification has expired.
+                Please scan a valid vehicle QR code.
             </p>
 
         `;
+
+    }
+
+
+    // ==========================================
+    // VEHICLE FOUND
+    // ==========================================
+
+    else {
+
+        const expiryDate = new Date(
+            vehicle.expiryDate + "T23:59:59"
+        );
+
+        const now = new Date();
+
+
+        // ==========================================
+        // VEHICLE IS VALID
+        // ==========================================
+
+        if (now <= expiryDate) {
+
+            document.getElementById("content").innerHTML = `
+
+                <img
+                    src="esspl%20logo.png"
+                    alt="Company Logo"
+                    class="logo"
+                >
+
+                <h2>Vehicle Verification</h2>
+
+                <div class="details">
+
+                    <div class="row">
+                        <div class="label">User Name</div>
+                        <div class="value">${vehicle.user}</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="label">Vehicle Reg. No.</div>
+                        <div class="value">${vehicle.reg}</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="label">Chassis No.</div>
+                        <div class="value">
+                            ${vehicle.chassis || "Not Provided"}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="label">Engine No.</div>
+                        <div class="value">${vehicle.engine}</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="label">Vehicle Type</div>
+                        <div class="value">${vehicle.type}</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="label">Date of Issue</div>
+                        <div class="value">${vehicle.issue}</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="label">Expiry Date</div>
+                        <div class="value">${vehicle.expiry}</div>
+                    </div>
+
+                </div>
+
+                <div class="valid">
+
+                    ✓ VALID VEHICLE
+
+                    <br>
+
+                    <small>
+                        Valid until ${vehicle.expiry}
+                    </small>
+
+                </div>
+
+            `;
+
+        }
+
+
+        // ==========================================
+        // VEHICLE IS EXPIRED
+        // ==========================================
+
+        else {
+
+            document.getElementById("content").innerHTML = `
+
+                <img
+                    src="esspl%20logo.png"
+                    alt="Company Logo"
+                    class="logo"
+                >
+
+                <div class="expired">
+                    EXPIRED
+                </div>
+
+                <p class="expired-text">
+                    This vehicle verification has expired.
+                </p>
+
+            `;
+
+        }
 
     }
 
