@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Verification</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 30px 15px;
+        }
+
+        .card {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px #ccc;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .row {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .expired {
+            text-align: center;
+            color: #c00;
+            font-size: 25px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card" id="content"></div>
+
+<script>
+
+    // Vehicle expiry date
+    const expiryDate = new Date("2026-10-31T23:59:59");
+
+    // Current date/time
+    const now = new Date();
+
+    if (now <= expiryDate) {
+
+        document.getElementById("content").innerHTML = `
+            <h2>Vehicle Verification</h2>
+
+            <div class="row"><b>User Name:</b> KHAN COACH</div>
+            <div class="row"><b>Vehicle Reg #:</b> AADP-949</div>
+            <div class="row"><b>Chassis #:</b> 305942</div>
+            <div class="row"><b>Engine #:</b> 12631</div>
+            <div class="row"><b>Type:</b> BUS</div>
+            <div class="row"><b>Date of Issue:</b> 04 June 2026</div>
+            <div class="row"><b>Expiry Date:</b> 31 Oct 2026</div>
+        `;
+
+    } else {
+
+        document.getElementById("content").innerHTML = `
+            <div class="expired">
+                EXPIRED
+            </div>
+
+            <p style="text-align:center;">
+                This vehicle verification has expired.
+            </p>
+        `;
+    }
+
+</script>
+
+</body>
+</html>
